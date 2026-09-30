@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Umashree × Shetty ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background:
+                radial-gradient(circle at 20% 20%, #ffb6c9 0%, transparent 30%),
+                radial-gradient(circle at 80% 80%, #c9b6ff 0%, transparent 30%),
+                linear-gradient(135deg, #fff0f5, #f5edff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            color: #3a2430;
+        }
+
+        /* -----------------------------
+           Floating background hearts
+        ----------------------------- */
+
+        .heart {
+            position: fixed;
+            bottom: -40px;
+            pointer-events: none;
+            animation: floatHeart linear forwards;
+            opacity: 0.65;
+            z-index: 0;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* -----------------------------
+           Main card
+        ----------------------------- */
+
+        .card {
+            position: relative;
+            z-index: 2;
+            width: min(92%, 500px);
+            min-height: 560px;
+            padding: 45px 30px;
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 30px;
+            box-shadow: 0 25px 70px rgba(100, 60, 90, 0.18);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            animation: cardAppear 0.8s ease;
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(25px) scale(0.96);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* -----------------------------
+           Top labels
+        ----------------------------- */
+
+        .distance {
+            font-size: 14px;
+            letter-spacing: 1px;
+            color: #9b647b;
+            margin-bottom: 15px;
+        }
+
+        .names {
+            font-size: 18px;
+            font-weight: 600;
+            color: #7c425c;
+            margin-bottom: 28px;
+        }
+
+        /* -----------------------------
+           Main text
+        ----------------------------- */
+
+        .emoji {
+            font-size: 55px;
+            margin-bottom: 20px;
+            animation: gentleBounce 2.5s infinite;
+        }
+
+        @keyframes gentleBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-7px);
+            }
+        }
+
+        h1 {
+            font-size: clamp(25px, 6vw, 35px);
+            line-height: 1.25;
+            margin-bottom: 18px;
+            color: #4b2938;
+        }
+
+        .question {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 420px;
+            color: #664653;
+            min-height: 90px;
+        }
+
+        .small-text {
+            font-size: 14px;
+            color: #987786;
+            margin-top: 12px;
+        }
+
+        /* -----------------------------
+           Buttons
+        ----------------------------- */
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+        }
+
+        button {
+            border: none;
+            padding: 14px 23px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-family: inherit;
+        }
+
+        .primary {
+            background: linear-gradient(135deg, #e75480, #c73868);
+            color: white;
+            box-shadow: 0 8px 20px rgba(199, 56, 104, 0.25);
+        }
+
+        .primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(199, 56, 104, 0.35);
+        }
+
+        .secondary {
+            background: #fff;
+            color: #7c425c;
+            border: 1px solid #f0cbd8;
+        }
+
+        .secondary:hover {
+            transform: translateY(-3px);
+            background: #fff7fa;
+        }
+
+        /* -----------------------------
+           Progress
+        ----------------------------- */
+
+        .progress {
+            position: absolute;
+            top: 22px;
+            left: 30px;
+            right: 30px;
+            height: 5px;
+            background: #f3dfe7;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #e75480, #a855f7);
+            transition: width 0.5s ease;
+        }
+
+        /* -----------------------------
+           Final screen
+        ----------------------------- */
+
+        .final-heart {
+            font-size: 75px;
+            animation: heartbeat 1.3s infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            15% {
+                transform: scale(1.18);
+            }
+
+            30% {
+                transform: scale(1);
+            }
+
+            45% {
+                transform: scale(1.12);
+            }
+        }
+
+        .final-message {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #664653;
+            margin-top: 10px;
+        }
+
+        .signature {
+            margin-top: 25px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #c73868;
+        }
+
+        .distance-line {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #987786;
+        }
+
+        .whatsapp {
+            margin-top: 28px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 14px 23px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            transition: 0.25s;
+        }
+
+        .whatsapp:hover {
+            transform: translateY(-3px);
+        }
+
+        /* -----------------------------
+           Mobile
+        ----------------------------- */
+
+        @media (max-width: 500px) {
+
+            .card {
+                min-height: 560px;
+                padding: 45px 22px;
+                border-radius: 25px;
+            }
+
+            h1 {
+                font-size: 27px;
+            }
+
+            .question {
+                font-size: 17px;
+            }
+
+            button {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .progress {
+                left: 22px;
+                right: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background hearts -->
+    <div id="hearts"></div>
+
+    <!-- Main Card -->
+    <main class="card">
+
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="distance" id="distance">
+            🇮🇳 India → 🇩🇪 Germany
+        </div>
+
+        <div class="names">
+            Umashree × Shetty ❤️
+        </div>
+
+        <div id="content">
+
+            <div class="emoji">👀</div>
+
+            <h1>Shetty...</h1>
+
+            <p class="question">
+                Since you're apparently going to be my fiancé someday...
+                I have a few very important questions for you. 😌
+            </p>
+
+            <p class="small-text">
+                Don't worry. There is no wrong answer.
+                Probably. 😂
+            </p>
+
+            <div class="buttons">
+                <button class="primary" onclick="startGame()">
+                    Okay, ask me 👀
+                </button>
+            </div>
+
+        </div>
+
+    </main>
+
+
+<script>
+
+    /* ==========================================
+       QUESTIONS
+    ========================================== */
+
+    const questions = [
+
+        {
+            emoji: "😏",
+            title: "Let's start easy...",
+            text: "Be honest, Shetty... did you actually expect me to become this interested in you? 👀",
+            buttons: [
+                "Absolutely not 😂",
+                "I was hoping 😌"
+            ]
+        },
+
+        {
+            emoji: "📱",
+            title: "Important question...",
+            text: "When my name pops up on your phone, do you secretly smile before opening the message? 👀",
+            buttons: [
+                "Maybe... 😏",
+                "Okay fine, yes 😂"
+            ]
+        },
+
+        {
+            emoji: "🌍",
+            title: "Now the serious stuff...",
+            text: "We're literally India 🇮🇳 → Germany 🇩🇪. Are you prepared for the occasional 'I miss you' call at completely unreasonable hours? 😂",
+            buttons: [
+                "I signed up for this ❤️",
+                "I need to reconsider 😭"
+            ]
+        },
+
+        {
+            emoji: "📞",
+            title: "Hypothetically...",
+            text: "If I randomly called you and said, 'I need to hear your voice'... would you answer? 👀",
+            buttons: [
+                "Obviously ❤️",
+                "Depends on the time 😂"
+            ]
+        },
+
+        {
+            emoji: "✈️",
+            title: "Okay, Shetty...",
+            text: "If distance wasn't a thing and I suddenly appeared in Germany... what's happening first? 👀",
+            buttons: [
+                "Food. Obviously 😂",
+                "Exploring together 🌍",
+                "Finally spending time together ❤️"
+            ]
+        },
+
+        {
+            emoji: "🥹",
+            title: "One more...",
+            text: "Do you think we'd be the kind of couple who annoys each other all day but secretly doesn't want to stop talking? 😂",
+            buttons: [
+                "100% 😂",
+                "Unfortunately... yes 😌"
+            ]
+        },
+
+        {
+            emoji: "❤️",
+            title: "Okay... last question.",
+            text: "Since you're going to be my fiancé... can I officially claim you as my favourite person? 👀❤️",
+            buttons: [
+                "Yes, ma'am 😌",
+                "You already did ❤️"
+            ]
+        }
+
+    ];
+
+
+    let currentQuestion = -1;
+
+
+    /* ==========================================
+       START
+    ========================================== */
+
+    function startGame() {
+
+        currentQuestion = 0;
+
+        showQuestion();
+
+    }
+
+
+    /* ==========================================
+       SHOW QUESTION
+    ========================================== */
+
+    function showQuestion() {
+
+        const q = questions[currentQuestion];
+
+        const content = document.getElementById("content");
+
+        content.style.opacity = "0";
+        content.style.transform = "translateY(10px)";
+
+        setTimeout(() => {
+
+            content.innerHTML = `
+
+                <div class="emoji">
+                    ${q.emoji}
+                </div>
+
+                <h1>
+                    ${q.title}
+                </h1>
+
+                <p class="question">
+                    ${q.text}
+                </p>
+
+                <div class="buttons">
+
+                    ${q.buttons.map((button, index) => `
+                        <button
+                            class="${index === 0 ? "primary" : "secondary"}"
+                            onclick="answer(${index})">
+                            ${button}
+                        </button>
+                    `).join("")}
+
+                </div>
+
+            `;
+
+            content.style.opacity = "1";
+            content.style.transform = "translateY(0)";
+
+            updateProgress();
+
+        }, 250);
+
+    }
+
+
+    /* ==========================================
+       ANSWER
+    ========================================== */
+
+    function answer(choice) {
+
+        /*
+         * A few playful reactions depending
+         * on the answer.
+         */
+
+        const reactions = [
+
+            "Hmmmm... noted. 👀",
+
+            "Interesting answer, Shetty. 😏",
+
+            "I had a feeling you'd say that. 😂",
+
+            "Okay... I'll remember that. ❤️",
+
+            "That's actually a very good answer. 😌"
+
+        ];
+
+        const reaction =
+            reactions[Math.floor(Math.random() * reactions.length)];
+
+
+        /*
+         * Last question → final screen
+         */
+
+        if (currentQuestion === questions.length - 1) {
+
+            showFinal();
+
+            return;
+
+        }
+
+
+        /*
+         * Small transition message
+         */
+
+        const content = document.getElementById("content");
+
+        content.innerHTML = `
+
+            <div class="emoji">
+                💭
+            </div>
+
+            <h1>
+                ${reaction}
+            </h1>
+
+            <p class="question">
+                Okay... moving on.
+            </p>
+
+        `;
+
+
+        setTimeout(() => {
+
+            currentQuestion++;
+
+            showQuestion();
+
+        }, 900);
+
+    }
+
+
+    /* ==========================================
+       PROGRESS BAR
+    ========================================== */
+
+    function updateProgress() {
+
+        const progress =
+            ((currentQuestion + 1) / questions.length) * 100;
+
+        document.getElementById("progressBar").style.width =
+            progress + "%";
+
+    }
+
+
+    /* ==========================================
+       FINAL SCREEN
+    ========================================== */
+
+    function showFinal() {
+
+        document.getElementById("progressBar").style.width = "100%";
+
+        const content = document.getElementById("content");
+
+        content.innerHTML = `
+
+            <div class="final-heart">
+                ❤️
+            </div>
+
+            <h1>
+                Well, Shetty...
+            </h1>
+
+            <p class="final-message">
+
+                Looks like you're officially stuck with me now. 😌
+                <br><br>
+
+                India 🇮🇳 ↔ Germany 🇩🇪
+                <br>
+
+                Different countries.
+                <br>
+
+                Different time zones.
+                <br>
+
+                One slightly questionable amount of flirting. 😂
+                <br><br>
+
+                But honestly...
+                <br>
+
+                <strong>
+                    I think we're going to be pretty fun. ❤️
+                </strong>
+
+            </p>
+
+            <div class="signature">
+                — Your almost-fiancée, Umashree 😌
+            </div>
+
+            <div class="distance-line">
+                P.S. You still owe me a proper date. 👀
+            </div>
+
+            <a
+                class="whatsapp"
+                href="https://wa.me/?text=Okay%20Shetty...%20I%20made%20you%20something.%20Go%20look%20at%20it%20%F0%9F%91%80%E2%9D%A4%EF%B8%8F"
+                target="_blank">
+
+                Message Shetty 💬❤️
+
+            </a>
+
+        `;
+
+        createCelebration();
+
+    }
+
+
+    /* ==========================================
+       FLOATING HEARTS
+    ========================================== */
+
+    function createHeart() {
+
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+
+        const hearts = ["❤️", "💕", "💗", "💖", "✨"];
+
+        heart.innerHTML =
+            hearts[Math.floor(Math.random() * hearts.length)];
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+        heart.style.fontSize =
+            (14 + Math.random() * 22) + "px";
+
+        heart.style.animationDuration =
+            (5 + Math.random() * 5) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 10000);
+
+    }
+
+
+    setInterval(createHeart, 500);
+
+
+    /* ==========================================
+       FINAL CELEBRATION
+    ========================================== */
+
+    function createCelebration() {
+
+        for (let i = 0; i < 30; i++) {
+
+            setTimeout(() => {
+                createHeart();
+            }, i * 100);
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
+
