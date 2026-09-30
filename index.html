@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Umashree × Shetty ❤️</title>
+    <title>🥳 Gowdre × Shetre 🥳</title>
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -16,31 +18,33 @@
         body {
             min-height: 100vh;
             font-family: "Segoe UI", Arial, sans-serif;
+
             background:
                 radial-gradient(circle at 20% 20%, #ffb6c9 0%, transparent 30%),
                 radial-gradient(circle at 80% 80%, #c9b6ff 0%, transparent 30%),
                 linear-gradient(135deg, #fff0f5, #f5edff);
+
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+
+            overflow-x: hidden;
             color: #3a2430;
         }
 
-        /* -----------------------------
-           Floating background hearts
-        ----------------------------- */
+        /* Floating purple hearts */
 
         .heart {
             position: fixed;
             bottom: -40px;
             pointer-events: none;
-            animation: floatHeart linear forwards;
+            animation: floatHeart linear forwards and backwards;
             opacity: 0.65;
             z-index: 0;
         }
 
         @keyframes floatHeart {
+
             0% {
                 transform: translateY(0) rotate(0deg);
                 opacity: 0;
@@ -56,33 +60,41 @@
             }
         }
 
-        /* -----------------------------
-           Main card
-        ----------------------------- */
+        /* Main card */
 
         .card {
             position: relative;
             z-index: 2;
-            width: min(92%, 500px);
-            min-height: 560px;
-            padding: 45px 30px;
-            background: rgba(255, 255, 255, 0.82);
+
+            width: min(92%, 520px);
+            min-height: 570px;
+
+            padding: 50px 30px;
+
+            background: rgba(255, 255, 255, 0.86);
+
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
+
             border: 1px solid rgba(255, 255, 255, 0.8);
+
             border-radius: 30px;
-            box-shadow: 0 25px 70px rgba(100, 60, 90, 0.18);
+
+            box-shadow:
+                0 25px 70px rgba(100, 60, 90, 0.18);
 
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
             text-align: center;
 
             animation: cardAppear 0.8s ease;
         }
 
         @keyframes cardAppear {
+
             from {
                 opacity: 0;
                 transform: translateY(25px) scale(0.96);
@@ -94,36 +106,71 @@
             }
         }
 
-        /* -----------------------------
-           Top labels
-        ----------------------------- */
+        /* Progress */
+
+        .progress {
+            position: absolute;
+
+            top: 22px;
+            left: 30px;
+            right: 30px;
+
+            height: 5px;
+
+            background: #f3dfe7;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+
+            width: 0%;
+
+            background:
+                linear-gradient(90deg, #e75480, #a855f7);
+
+            transition: width 0.5s ease;
+        }
+
+        /* Header */
 
         .distance {
             font-size: 14px;
+
             letter-spacing: 1px;
+
             color: #9b647b;
+
             margin-bottom: 15px;
         }
 
         .names {
             font-size: 18px;
+
             font-weight: 600;
+
             color: #7c425c;
+
             margin-bottom: 28px;
         }
 
-        /* -----------------------------
-           Main text
-        ----------------------------- */
+        /* Main */
 
         .emoji {
             font-size: 55px;
+
             margin-bottom: 20px;
+
             animation: gentleBounce 2.5s infinite;
         }
 
         @keyframes gentleBounce {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0);
             }
 
@@ -134,105 +181,161 @@
 
         h1 {
             font-size: clamp(25px, 6vw, 35px);
+
             line-height: 1.25;
+
             margin-bottom: 18px;
+
             color: #4b2938;
         }
 
         .question {
             font-size: 18px;
+
             line-height: 1.6;
-            max-width: 420px;
-            color: #664653;
+
+            max-width: 440px;
+
             min-height: 90px;
+
+            color: #664653;
         }
 
         .small-text {
             font-size: 14px;
+
             color: #987786;
+
             margin-top: 12px;
         }
 
-        /* -----------------------------
-           Buttons
-        ----------------------------- */
+        /* Buttons */
 
         .buttons {
             margin-top: 30px;
+
             display: flex;
+
             flex-wrap: wrap;
+
             justify-content: center;
+
             gap: 12px;
+
             width: 100%;
         }
 
         button {
             border: none;
+
             padding: 14px 23px;
+
             border-radius: 50px;
+
             font-size: 15px;
+
             font-weight: 600;
+
             cursor: pointer;
+
             transition: all 0.25s ease;
+
             font-family: inherit;
         }
 
         .primary {
-            background: linear-gradient(135deg, #e75480, #c73868);
+            background:
+                linear-gradient(135deg, #e75480, #c73868);
+
             color: white;
-            box-shadow: 0 8px 20px rgba(199, 56, 104, 0.25);
+
+            box-shadow:
+                0 8px 20px rgba(199, 56, 104, 0.25);
         }
 
         .primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(199, 56, 104, 0.35);
+
+            box-shadow:
+                0 12px 25px rgba(199, 56, 104, 0.35);
         }
 
         .secondary {
             background: #fff;
+
             color: #7c425c;
+
             border: 1px solid #f0cbd8;
         }
 
         .secondary:hover {
             transform: translateY(-3px);
+
             background: #fff7fa;
         }
 
-        /* -----------------------------
-           Progress
-        ----------------------------- */
+        /* Answers */
 
-        .progress {
-            position: absolute;
-            top: 22px;
-            left: 30px;
-            right: 30px;
-            height: 5px;
-            background: #f3dfe7;
-            border-radius: 20px;
-            overflow: hidden;
+        .answer-box {
+            width: 100%;
+
+            max-height: 250px;
+
+            overflow-y: auto;
+
+            text-align: left;
+
+            margin-top: 20px;
+
+            padding: 15px;
+
+            background: #fff7fa;
+
+            border-radius: 18px;
+
+            border: 1px solid #f2d6e1;
         }
 
-        .progress-bar {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, #e75480, #a855f7);
-            transition: width 0.5s ease;
+        .answer-item {
+            padding: 10px 0;
+
+            border-bottom: 1px solid #f0dce4;
+
+            font-size: 14px;
+
+            line-height: 1.5;
         }
 
-        /* -----------------------------
-           Final screen
-        ----------------------------- */
+        .answer-item:last-child {
+            border-bottom: none;
+        }
+
+        .answer-question {
+            color: #8b6372;
+
+            margin-bottom: 4px;
+        }
+
+        .answer-value {
+            color: #c73868;
+
+            font-weight: 600;
+        }
+
+        /* Final */
 
         .final-heart {
             font-size: 75px;
+
             animation: heartbeat 1.3s infinite;
+
             margin-bottom: 20px;
         }
 
         @keyframes heartbeat {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
             }
 
@@ -251,49 +354,70 @@
 
         .final-message {
             font-size: 17px;
+
             line-height: 1.8;
+
             color: #664653;
+
             margin-top: 10px;
         }
 
         .signature {
             margin-top: 25px;
+
             font-size: 18px;
+
             font-weight: 600;
+
             color: #c73868;
         }
 
         .distance-line {
             margin-top: 20px;
+
             font-size: 14px;
+
             color: #987786;
         }
 
+        /* WhatsApp */
+
         .whatsapp {
             margin-top: 28px;
+
             background: #25D366;
+
             color: white;
+
             text-decoration: none;
-            padding: 14px 23px;
+
+            padding: 15px 25px;
+
             border-radius: 50px;
+
             font-weight: 600;
+
             display: inline-block;
+
             transition: 0.25s;
         }
 
         .whatsapp:hover {
             transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 25px rgba(37, 211, 102, 0.3);
         }
 
-        /* -----------------------------
-           Mobile
-        ----------------------------- */
+        /* Mobile */
 
         @media (max-width: 500px) {
 
             .card {
-                min-height: 560px;
+                min-height: 570px;
+
                 padding: 45px 22px;
+
                 border-radius: 25px;
             }
 
@@ -307,7 +431,8 @@
 
             button {
                 width: 100%;
-                max-width: 280px;
+
+                max-width: 300px;
             }
 
             .progress {
@@ -315,49 +440,99 @@
                 right: 22px;
             }
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- Background hearts -->
+    <!-- Floating purple hearts -->
+
     <div id="hearts"></div>
 
-    <!-- Main Card -->
+
+    <!-- Main card -->
+
     <main class="card">
 
+        <!-- Progress bar -->
+
         <div class="progress">
-            <div class="progress-bar" id="progressBar"></div>
+
+            <div
+                class="progress-bar"
+                id="progressBar">
+            </div>
+
         </div>
 
-        <div class="distance" id="distance">
+
+        <!-- Distance -->
+
+        <div class="distance">
+
             🇮🇳 India → 🇩🇪 Germany
+
         </div>
+
+
+        <!-- Names -->
 
         <div class="names">
-            Umashree × Shetty ❤️
+
+           🥳 Gowdre × Shetre 🥳
+
         </div>
+
+
+        <!-- Main content -->
 
         <div id="content">
 
-            <div class="emoji">👀</div>
+            <div class="emoji">
+                👀
+            </div>
 
-            <h1>Shetty...</h1>
+
+            <h1>
+                Shetreeeeeee...
+            </h1>
+
 
             <p class="question">
-                Since you're apparently going to be my fiancé someday...
-                I have a few very important questions for you. 😌
+
+                Since you're apparently going to be
+                my husband someday...
+
+                I have a few very important questions
+                for you. 😌
+
             </p>
+
 
             <p class="small-text">
-                Don't worry. There is no wrong answer.
+
+                Don't worry.
+
+                There is no wrong answer.
+
                 Probably. 😂
+
             </p>
 
+
             <div class="buttons">
-                <button class="primary" onclick="startGame()">
+
+                <button
+                    class="primary"
+                    onclick="startGame()">
+
                     Okay, ask me 👀
+
                 </button>
+
             </div>
 
         </div>
@@ -367,370 +542,877 @@
 
 <script>
 
-    /* ==========================================
-       QUESTIONS
-    ========================================== */
 
-    const questions = [
+/* ==================================================
+   QUESTIONS
+================================================== */
 
-        {
-            emoji: "😏",
-            title: "Let's start easy...",
-            text: "Be honest, Shetty... did you actually expect me to become this interested in you? 👀",
-            buttons: [
-                "Absolutely not 😂",
-                "I was hoping 😌"
-            ]
-        },
 
-        {
-            emoji: "📱",
-            title: "Important question...",
-            text: "When my name pops up on your phone, do you secretly smile before opening the message? 👀",
-            buttons: [
-                "Maybe... 😏",
-                "Okay fine, yes 😂"
-            ]
-        },
+const questions = [
 
-        {
-            emoji: "🌍",
-            title: "Now the serious stuff...",
-            text: "We're literally India 🇮🇳 → Germany 🇩🇪. Are you prepared for the occasional 'I miss you' call at completely unreasonable hours? 😂",
-            buttons: [
-                "I signed up for this ❤️",
-                "I need to reconsider 😭"
-            ]
-        },
+    {
+        emoji: "😏",
 
-        {
-            emoji: "📞",
-            title: "Hypothetically...",
-            text: "If I randomly called you and said, 'I need to hear your voice'... would you answer? 👀",
-            buttons: [
-                "Obviously ❤️",
-                "Depends on the time 😂"
-            ]
-        },
+        title: "Let's start easy...",
 
-        {
-            emoji: "✈️",
-            title: "Okay, Shetty...",
-            text: "If distance wasn't a thing and I suddenly appeared in Germany... what's happening first? 👀",
-            buttons: [
-                "Food. Obviously 😂",
-                "Exploring together 🌍",
-                "Finally spending time together ❤️"
-            ]
-        },
+        text:
+            "Be honest, Shetree... did you actually expect me to become this interested in you? 👀",
 
-        {
-            emoji: "🥹",
-            title: "One more...",
-            text: "Do you think we'd be the kind of couple who annoys each other all day but secretly doesn't want to stop talking? 😂",
-            buttons: [
-                "100% 😂",
-                "Unfortunately... yes 😌"
-            ]
-        },
+        buttons: [
+            "Absolutely not 😂",
+            "I was hoping 😌"
+        ]
+    },
 
-        {
-            emoji: "❤️",
-            title: "Okay... last question.",
-            text: "Since you're going to be my fiancé... can I officially claim you as my favourite person? 👀❤️",
-            buttons: [
-                "Yes, ma'am 😌",
-                "You already did ❤️"
-            ]
-        }
+
+    {
+        emoji: "📱",
+
+        title: "Important question...",
+
+        text:
+        	"What's your actual reaction when you see a message from me? 😌",
+
+        buttons: [
+            "I smile immediately 🙈",
+            "I pretend I'm not excited 😂",
+            "Depends on the message 👀"
+
+        ]
+    },
+
+
+    {
+    	emoji: "✈️",
+
+    	title: "Fast-forward...",
+
+    	text:
+        	"Imagine the distance suddenly disappears and we're in the same city. What's the first thing we're doing? 👀",
+
+    	buttons: [
+        	"Finding food 😂",
+        	"Going somewhere random 🌍",
+        	"Just sitting and talking ❤️",
+		"Doing some naughty stuff 🙈"
+    	]
+     },
+
+
+    {
+        emoji: "📞",
+
+        title: "Hypothetically...",
+
+        text:
+            "If I randomly called you and said, 'I need to hear your voice'... would you answer? 👀",
+
+        buttons: [
+            "Obviously ❤️",
+            "Depends on the time 😂"
+        ]
+    },
+
+
+    {
+    	emoji: "❤️",
+
+    	title: "Don't overthink this...",
+
+    	text:
+        	"Which one sounds most like us? 👀",
+
+    	buttons: [
+        	"Cute & slightly chaotic 😂",
+        	"Flirty & annoying 😏",
+        	"Best friends with extra feelings ❤️"
+    	]
+     },
+
+
+    {
+        emoji: "🥹",
+
+        title: "One more...",
+
+        text:
+            "Do you think we'd be the kind of couple who annoys each other all day but secretly doesn't want to stop talking? 😂",
+
+        buttons: [
+            "100% 😂",
+            "Unfortunately... yes 😌"
+        ]
+    },
+
+
+    {
+    	emoji: "📱",
+
+    	title: "Be careful with this one...",
+
+    	text:
+        	"If I disappeared from your chat for an entire day, what would you do? 👀",
+
+    	buttons: [
+        	"Wait patiently 😌",
+        	"Check if you're okay 👀",
+        	"Definitely text you first 😂"
+    	]	
+     },
+
+
+     {
+    	emoji: "🥹",
+
+    	title: "Okay, this is cute...",
+
+    	text:
+        	"What's the most dangerous thing about talking to me? 😂",
+
+    	buttons: [
+        	"Getting too attached ❤️",
+        	"Smiling at my phone like an idiot 😂",
+        	"Wanting to talk to you all day 👀"
+    	]
+      },
+
+
+      {
+    	emoji: "💍",
+
+    	title: "Let's get a little serious...",
+
+    	text:
+        	"When you think about marriage, what matters most to you?",
+
+    	buttons: [
+        	"Being best friends ❤️",
+        	"Building a peaceful life together 🏡",
+        	"Growing together through everything 🌱",
+        	"All of the above 🥳"
+    	]
+      },
+
+
+      {
+    	emoji: "🫶",
+
+    	title: "Real life question...",
+
+    	text:
+        	"Marriage won't always be easy. When we have a difficult phase, what would you want us to do?",
+
+    	buttons: [
+        	"Talk it through, even when it's uncomfortable",
+        	"Give each other space, then talk calmly",
+        	"Never let a disagreement become bigger than us ❤️",
+        	"A little bit of all three 😌"
+    	]
+       },
+
+       
+       {
+    	emoji: "🗣️",
+
+    	title: "Something important...",
+
+    	text:
+        	"If something I did ever hurt you, how would you want us to handle it?",
+
+    	buttons: [
+        	"Tell each other honestly 🥳",
+        	"Take some time and then talk",
+        	"Never go to bed angry without trying to resolve it",
+        	"Whatever helps us understand each other better"
+    	]
+       },
+
+
+       {
+    	emoji: "🏡",
+
+    	title: "Imagine our life...",
+
+    	text:
+        	"What would make a house feel like a real home to you?",
+
+    	buttons: [
+        	"Peace and understanding 🥳",
+        	"Lots of laughter 😂",
+        	"Having someone who feels like home",
+        	"All of these together 🫶"
+    	]
+       },
+
+
+       {
+    	emoji: "🌱",
+
+    	title: "A long-term question...",
+
+    	text:
+        	"If we get married, how would you want us to handle the fact that we'll both change and grow over the years?",
+
+    	buttons: [
+        	"Grow together",
+        	"Support each other's individual dreams",
+        	"Keep choosing each other through every version of us 🥳",
+        	"All three"
+    	]
+       },
+
+
+       {
+    	emoji: "💰",
+
+    	title: "Okay, responsible adults now... 😂",
+
+    	text:
+        	"When it comes to finances in a marriage, what sounds most important to you?",
+
+    	buttons: [
+        	"Complete transparency",
+        	"Planning and saving together",
+        	"Having some independence too",
+        	"A healthy balance of everything"
+    	]
+       },
+
+
+       {
+    	emoji: "🏠",
+
+    	title: "One that really matters...",
+
+    	text:
+        	"When two people get married, how should they handle situations where family expectations and their own decisions don't completely match?",
+
+    	buttons: [
+        	"Make decisions together as a couple ❤️",
+        	"Respect both families while keeping boundaries",
+        	"Discuss everything privately before deciding",
+        	"Depends on the situation"
+    	]
+       },
+
+
+       {
+    	emoji: "🥳",
+
+    	title: "One thing I really want to know...",
+
+    	text:
+        	"What do you think a husband and wife should be for each other first?",
+
+    	buttons: [
+        	"Best friends",
+        	"Partners in everything",
+        	"Each other's safe place",
+        	"All three 🥳"
+    	]
+       },
+
+
+       {
+    	emoji: "🥹",
+
+    	title: "And this one is important...",
+
+    	text:
+        	"Years from now, when life looks completely different from today, what would you want us to never lose?",
+
+    	buttons: [
+        	"Our love X friendship 🥳",
+        	"Our ability to laugh together 😂",
+        	"Our communication and trust",
+        	"The feeling that we're on the same team 🫶"
+    	]
+       },
+
+
+       {
+    	emoji: "💭",
+
+    	title: "Think about this one...",
+
+    	text:
+        	"If marriage isn't about finding a perfect person, what do you think makes two imperfect people work beautifully together?",
+
+    	buttons: [
+        	"Patience and understanding",
+        	"Communication and trust",
+        	"Choosing each other every day ❤️",
+        	"A combination of all three"
+    	]
+       },
+
+       
+       {
+    	emoji: "🤍",
+
+    	title: "One last serious question...",
+
+    	text:
+        	"If we become husband and wife, what is one promise you would want us to make to each other?",
+
+    	buttons: [
+        	"Always communicate, even when it's hard",
+        	"Never stop being each other's safe place",
+        	"Keep choosing each other through every season ❤️",
+        	"We'll create our own promise together 🤍"
+    	]
+       },
+
+];
+
+
+/* ==================================================
+   VARIABLES
+================================================== */
+
+
+let currentQuestion = -1;
+
+
+/* Store Shetty's answers */
+
+let answers = [];
+
+
+/* ==================================================
+   START
+================================================== */
+
+
+function startGame() {
+
+    currentQuestion = 0;
+
+    answers = [];
+
+    showQuestion();
+
+}
+
+
+/* ==================================================
+   SHOW QUESTION
+================================================== */
+
+
+function showQuestion() {
+
+    const q =
+        questions[currentQuestion];
+
+    const content =
+        document.getElementById("content");
+
+
+    content.style.opacity = "0";
+
+    content.style.transform =
+        "translateY(10px)";
+
+
+    setTimeout(() => {
+
+        content.innerHTML = `
+
+            <div class="emoji">
+
+                ${q.emoji}
+
+            </div>
+
+
+            <h1>
+
+                ${q.title}
+
+            </h1>
+
+
+            <p class="question">
+
+                ${q.text}
+
+            </p>
+
+
+            <div class="buttons">
+
+                ${q.buttons.map((button, index) => `
+
+                    <button
+
+                        class="${
+                            index === 0
+                            ? "primary"
+                            : "secondary"
+                        }"
+
+                        onclick="answer(${index})">
+
+                        ${button}
+
+                    </button>
+
+                `).join("")}
+
+            </div>
+
+        `;
+
+
+        content.style.opacity = "1";
+
+        content.style.transform =
+            "translateY(0)";
+
+
+        updateProgress();
+
+
+    }, 250);
+
+}
+
+
+/* ==================================================
+   SAVE ANSWER
+================================================== */
+
+
+function answer(choice) {
+
+    /* Save answer */
+
+    answers.push({
+
+        question:
+            questions[currentQuestion].text,
+
+        answer:
+            questions[currentQuestion].buttons[choice]
+
+    });
+
+
+    const reactions = [
+
+        "Hmmmm... noted. 👀",
+
+        "Interesting answer, Shetty. 😏",
+
+        "I had a feeling you'd say that. 😂",
+
+        "Okay... I'll remember that. ❤️",
+
+        "That's actually a very good answer. 😌"
 
     ];
 
 
-    let currentQuestion = -1;
+    const reaction =
+        reactions[
+            Math.floor(
+                Math.random() *
+                reactions.length
+            )
+        ];
 
 
-    /* ==========================================
-       START
-    ========================================== */
+    /* Last question */
 
-    function startGame() {
+    if (
+        currentQuestion ===
+        questions.length - 1
+    ) {
 
-        currentQuestion = 0;
+        showFinal();
 
-        showQuestion();
+        return;
 
     }
 
 
-    /* ==========================================
-       SHOW QUESTION
-    ========================================== */
+    const content =
+        document.getElementById("content");
 
-    function showQuestion() {
 
-        const q = questions[currentQuestion];
+    content.innerHTML = `
 
-        const content = document.getElementById("content");
+        <div class="emoji">
 
-        content.style.opacity = "0";
-        content.style.transform = "translateY(10px)";
+            💭
 
-        setTimeout(() => {
+        </div>
 
-            content.innerHTML = `
 
-                <div class="emoji">
-                    ${q.emoji}
-                </div>
+        <h1>
 
-                <h1>
-                    ${q.title}
-                </h1>
+            ${reaction}
 
-                <p class="question">
-                    ${q.text}
-                </p>
+        </h1>
 
-                <div class="buttons">
 
-                    ${q.buttons.map((button, index) => `
-                        <button
-                            class="${index === 0 ? "primary" : "secondary"}"
-                            onclick="answer(${index})">
-                            ${button}
-                        </button>
-                    `).join("")}
+        <p class="question">
+
+            Okay... moving on.
+
+        </p>
+
+    `;
+
+
+    setTimeout(() => {
+
+        currentQuestion++;
+
+        showQuestion();
+
+    }, 900);
+
+}
+
+
+/* ==================================================
+   PROGRESS
+================================================== */
+
+
+function updateProgress() {
+
+    const progress =
+
+        (
+            (currentQuestion + 1)
+            /
+            questions.length
+        ) * 100;
+
+
+    document.getElementById(
+        "progressBar"
+    ).style.width = progress + "%";
+
+}
+
+
+/* ==================================================
+   CREATE WHATSAPP MESSAGE
+================================================== */
+
+
+function createWhatsAppMessage() {
+
+    let message =
+        "💌 Shetty's answers for his Chinna ❤️\n\n";
+
+
+    answers.forEach(
+        (item, index) => {
+
+            message +=
+
+                `${index + 1}. ` +
+
+                `${item.question}\n` +
+
+                `👉 ${item.answer}\n\n`;
+
+        }
+    );
+
+
+    message +=
+
+        "🇮🇳 Gowdree × Shetree 🇩🇪\n\n" +
+
+        "Apparently I'm officially stuck " +
+
+        "with her now 😂❤️";
+
+
+    return message;
+
+}
+
+
+/* ==================================================
+   FINAL SCREEN
+================================================== */
+
+
+function showFinal() {
+
+    document.getElementById(
+        "progressBar"
+    ).style.width = "50%";
+
+
+    const content =
+        document.getElementById("content");
+
+
+    /* Create WhatsApp message */
+
+    const message =
+        createWhatsAppMessage();
+
+
+    /*
+       DIRECT WHATSAPP CHAT
+
+       Uma's number:
+       +91 9620350058
+
+       WhatsApp format:
+       919620350058
+    */
+
+    const whatsappLink =
+
+        "https://wa.me/919620350058?text=" +
+
+        encodeURIComponent(message);
+
+
+    /* Display answers */
+
+    let answerHTML = "";
+
+
+    answers.forEach(
+        (item, index) => {
+
+            answerHTML += `
+
+                <div class="answer-item">
+
+                    <div class="answer-question">
+
+                        ${index + 1}.
+                        ${item.question}
+
+                    </div>
+
+
+                    <div class="answer-value">
+
+                        🥳 ${item.answer}
+
+                    </div>
 
                 </div>
 
             `;
 
-            content.style.opacity = "1";
-            content.style.transform = "translateY(0)";
-
-            updateProgress();
-
-        }, 250);
-
-    }
+        }
+    );
 
 
-    /* ==========================================
-       ANSWER
-    ========================================== */
+    content.innerHTML = `
 
-    function answer(choice) {
+        <div class="final-heart">
 
-        /*
-         * A few playful reactions depending
-         * on the answer.
-         */
+            ❤️
 
-        const reactions = [
+        </div>
 
-            "Hmmmm... noted. 👀",
 
-            "Interesting answer, Shetty. 😏",
+        <h1>
 
-            "I had a feeling you'd say that. 😂",
+            Well, Shetreeee...
 
-            "Okay... I'll remember that. ❤️",
+        </h1>
 
-            "That's actually a very good answer. 😌"
 
+        <p class="final-message">
+
+            Looks like you're officially
+            stuck with me now. 😌
+
+            <br><br>
+
+            India 🇮🇳 ↔ Germany 🇩🇪
+
+            <br>
+
+            Different countries.
+
+            <br>
+
+            Different time zones.
+
+            <br>
+
+            One slightly questionable amount
+            of flirting. 😂
+
+            <br><br>
+
+            But honestly...
+
+            <br>
+
+            <strong>
+
+                I think we're going to be
+                pretty fun. 🥳
+
+            </strong>
+
+        </p>
+
+
+        <div class="signature">
+
+            — Your almost-fiancée,
+            Chinna 😌
+
+        </div>
+
+
+        <div class="distance-line">
+
+            P.S. You still owe me a proper date. 👀
+
+        </div>
+
+
+        <h3
+            style="
+                margin-top:25px;
+                color:#7c425c;
+            ">
+
+            Your answers 👀
+
+        </h3>
+
+
+        <div class="answer-box">
+
+            ${answerHTML}
+
+        </div>
+
+
+        <!-- Direct WhatsApp button -->
+
+        <a
+
+            class="whatsapp"
+
+            href="${whatsappLink}"
+
+            target="_blank">
+
+            💬 Send my answers to Chinna 🥳
+
+        </a>
+
+    `;
+
+
+    createCelebration();
+
+}
+
+
+/* ==================================================
+   FLOATING HEARTS
+================================================== */
+
+
+function createHeart() {
+
+    const heart =
+        document.createElement("div");
+
+
+    heart.className = "heart";
+
+
+    const heartTypes = [
+
+        "💜",
+        "💗",
+        "💖",
+        "✨"
+
+    ];
+
+
+    heart.innerHTML =
+
+        heartTypes[
+            Math.floor(
+                Math.random() *
+                heartTypes.length
+            )
         ];
 
-        const reaction =
-            reactions[Math.floor(Math.random() * reactions.length)];
+
+    heart.style.left =
+
+        Math.random() * 100 + "vw";
 
 
-        /*
-         * Last question → final screen
-         */
+    heart.style.fontSize =
 
-        if (currentQuestion === questions.length - 1) {
-
-            showFinal();
-
-            return;
-
-        }
+        (14 + Math.random() * 22) +
+        "px";
 
 
-        /*
-         * Small transition message
-         */
+    heart.style.animationDuration =
 
-        const content = document.getElementById("content");
-
-        content.innerHTML = `
-
-            <div class="emoji">
-                💭
-            </div>
-
-            <h1>
-                ${reaction}
-            </h1>
-
-            <p class="question">
-                Okay... moving on.
-            </p>
-
-        `;
+        (5 + Math.random() * 5) +
+        "s";
 
 
-        setTimeout(() => {
-
-            currentQuestion++;
-
-            showQuestion();
-
-        }, 900);
-
-    }
+    document.body.appendChild(heart);
 
 
-    /* ==========================================
-       PROGRESS BAR
-    ========================================== */
+    setTimeout(() => {
 
-    function updateProgress() {
+        heart.remove();
 
-        const progress =
-            ((currentQuestion + 1) / questions.length) * 100;
+    }, 10000);
 
-        document.getElementById("progressBar").style.width =
-            progress + "%";
-
-    }
+}
 
 
-    /* ==========================================
-       FINAL SCREEN
-    ========================================== */
-
-    function showFinal() {
-
-        document.getElementById("progressBar").style.width = "100%";
-
-        const content = document.getElementById("content");
-
-        content.innerHTML = `
-
-            <div class="final-heart">
-                ❤️
-            </div>
-
-            <h1>
-                Well, Shetty...
-            </h1>
-
-            <p class="final-message">
-
-                Looks like you're officially stuck with me now. 😌
-                <br><br>
-
-                India 🇮🇳 ↔ Germany 🇩🇪
-                <br>
-
-                Different countries.
-                <br>
-
-                Different time zones.
-                <br>
-
-                One slightly questionable amount of flirting. 😂
-                <br><br>
-
-                But honestly...
-                <br>
-
-                <strong>
-                    I think we're going to be pretty fun. ❤️
-                </strong>
-
-            </p>
-
-            <div class="signature">
-                — Your almost-fiancée, Umashree 😌
-            </div>
-
-            <div class="distance-line">
-                P.S. You still owe me a proper date. 👀
-            </div>
-
-            <a
-                class="whatsapp"
-                href="https://wa.me/?text=Okay%20Shetty...%20I%20made%20you%20something.%20Go%20look%20at%20it%20%F0%9F%91%80%E2%9D%A4%EF%B8%8F"
-                target="_blank">
-
-                Message Shetty 💬❤️
-
-            </a>
-
-        `;
-
-        createCelebration();
-
-    }
+setInterval(createHeart, 500);
 
 
-    /* ==========================================
-       FLOATING HEARTS
-    ========================================== */
+/* ==================================================
+   CELEBRATION
+================================================== */
 
-    function createHeart() {
 
-        const heart = document.createElement("div");
+function createCelebration() {
 
-        heart.className = "heart";
-
-        const hearts = ["❤️", "💕", "💗", "💖", "✨"];
-
-        heart.innerHTML =
-            hearts[Math.floor(Math.random() * hearts.length)];
-
-        heart.style.left =
-            Math.random() * 100 + "vw";
-
-        heart.style.fontSize =
-            (14 + Math.random() * 22) + "px";
-
-        heart.style.animationDuration =
-            (5 + Math.random() * 5) + "s";
-
-        document.body.appendChild(heart);
+    for (
+        let i = 0;
+        i < 30;
+        i++
+    ) {
 
         setTimeout(() => {
-            heart.remove();
-        }, 10000);
+
+            createHeart();
+
+        }, i * 100);
 
     }
 
-
-    setInterval(createHeart, 500);
-
-
-    /* ==========================================
-       FINAL CELEBRATION
-    ========================================== */
-
-    function createCelebration() {
-
-        for (let i = 0; i < 30; i++) {
-
-            setTimeout(() => {
-                createHeart();
-            }, i * 100);
-
-        }
-
-    }
+}
 
 </script>
 
 </body>
-</html>
 
+</html>
